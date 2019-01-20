@@ -19,3 +19,7 @@ table {
   width: 100%;
   text-align: right;
 }
+
+.gap {
+  height: 5px;
+}

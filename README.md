@@ -1,1 +1,9 @@
 # vdc
+
+- UNISYS
+- NEW SHOP
+- MILL HALL
+- COLORCON
+- LIFE QUEST
+- BPI
+- COMET

@@ -1,12 +1,6 @@
 # vdc
 
-- UNISYS
-- NEW SHOP
-- MILL HALL
-- COLORCON
-- LIFE QUEST
-- BPI
-- COMET
+School, Hospital, University, Apartment, Subway Station, Office Building
 
 # images
 

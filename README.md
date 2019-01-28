@@ -1,6 +1,10 @@
 # vdc
 
+Building Types:
 School, Hospital, University, Apartment, Subway Station, Office Building
+
+Software:
+Autodesk Revit, AutoCAD, AutoCAD MEP, Navisworks, Solidworks, SketchUp, Glue, Inventor, Fusion 360, AutoCAD Electrical, 3DsMAX, Smart Plant Electrical, Bentley Microstation, Visual Studio, DynamoDB, Firebase
 
 # images
 

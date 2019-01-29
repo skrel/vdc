@@ -100,3 +100,49 @@ background-color: #f0f0f0;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
+
+
+
+
+.buttonc {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #4afc0f;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 15px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 8px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.buttonc span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonc span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonc:hover span {
+  padding-right: 25px;
+}
+
+.buttonc:hover span:after {
+  opacity: 1;
+  right: 0;
+}

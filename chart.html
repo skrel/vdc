@@ -1,25 +1,57 @@
 <html>
 <head>
 <title>VC&Prefabrication</title>
-<link rel="stylesheet" href="chartlayout.css">
-<link rel="stylesheet" href="chart.js">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<style>
+.container {
+  margin: 20px;
+}
 
-</head>
+.chart {
+  width: 100%;
+  height: 500px;
+}
+</style>
 <body>
+<div class="chart" id="chart"></div>
 
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">  
-<div class="row">
-  <div class="col-md-4 col-md-offset-4"><hr /></div>
-  <div class="clearfix"></div>
-  <div class="col-md-6">
-    <div id="chart_div1" class="chart"></div></div>
-</div>
+<div class="container">
+<p>RIB - Room In A Box</p>
+<p>CO - Conduit Overhead</p>
+<p>CU - Conduit Underground</p>
+<p>EE - Electrical Equipment</p>
+<p>TP - Temporary Power</p>
+<p>CT - Cable Tray</p>
+<p>DO - Design Overhead</p></div>
 
-    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+<script>
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart1);
+function drawChart1() {
+  var data = google.visualization.arrayToDataTable([
+    ['Year', 'RIB', 'CO', 'CU', 'EE', 'TP', 'CT', 'DO'],
+    ['Jan',  51, 8, 3, 15, 1, 1, 20],
+    ['Feb', 1, 1, 1, 1, 1, 1, 1],
+    ['Mar', 1, 1, 1, 1, 1, 1, 1],
+    ['Apr', 1, 1, 1, 1, 1, 1, 1],
+    ['May', 1, 1, 1, 1, 1, 1, 1],
+    ['Jun', 1, 1, 1, 1, 1, 1, 1],
+    ['Jul', 1, 1, 1, 1, 1, 1, 1],
+    ['Aug', 1, 1, 1, 1, 1, 1, 1],
+    ['Sep', 1, 1, 1, 1, 1, 1, 1],
+    ['Oct', 1, 1, 1, 1, 1, 1, 1],
+    ['Nov', 1, 1, 1, 1, 1, 1, 1],
+    ['Dec', 1, 1, 1, 1, 1, 1, 1]]);
+
+  var options = {
+    title: 'Design Performance',
+    hAxis: {title: '2019 Year', titleTextStyle: {color: 'red'}}
+ };
+
+var chart = new google.visualization.ColumnChart(document.getElementById('chart'));
   chart.draw(data, options);
 }
 </script>
-
 </body>
+</head>
 </html>

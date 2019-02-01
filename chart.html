@@ -15,15 +15,6 @@
 <body>
 <div class="chart" id="chart"></div>
 
-<div class="container">
-<p>RIB - Room In A Box</p>
-<p>CO - Conduit Overhead</p>
-<p>CU - Conduit Underground</p>
-<p>EE - Electrical Equipment</p>
-<p>TP - Temporary Power</p>
-<p>CT - Cable Tray</p>
-<p>DO - Design Overhead</p></div>
-
 <script>
 google.load("visualization", "1", {packages:["corechart"]});
 google.setOnLoadCallback(drawChart1);
@@ -45,8 +36,8 @@ function drawChart1() {
 
   var options = {
     title: 'Design Performance',
-    hAxis: {title: '2019 Year', titleTextStyle: {color: 'red'}}
- };
+    hAxis: {title: '2019 Year', titleTextStyle: {color: 'red'}},
+	vAxis: {title: 'Hours', titleTextStyle: {color: 'red'} } };
 
 var chart = new google.visualization.ColumnChart(document.getElementById('chart'));
   chart.draw(data, options);

@@ -7,13 +7,19 @@
   margin: 20px;
 }
 
-.chart {
+.chartd {
   width: 100%;
   height: 500px;
 }
+	
+.charts {
+  width: 100%;
+  height: 500px;
+}
+	
 </style>
 <body>
-<div class="chart" id="chart"></div>
+<div class="chartd" id="chartd"></div>
 
 <script>
 google.load("visualization", "1", {packages:["corechart"]});
@@ -39,10 +45,40 @@ function drawChart1() {
     hAxis: {title: '2019 Year', titleTextStyle: {color: 'red'}},
 	vAxis: {title: 'Hours', titleTextStyle: {color: 'red'} } };
 
-var chart = new google.visualization.ColumnChart(document.getElementById('chart'));
+var chart = new google.visualization.ColumnChart(document.getElementById('chartd'));
   chart.draw(data, options);
 }
 </script>
+
+	<div class="charts" id="charts"></div>
+<script>
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart1);
+function drawChart1() {
+  var data = google.visualization.arrayToDataTable([
+    ['Year', 'RIB', 'CO', 'CU', 'EE', 'TP', 'CT', 'DO'],
+    ['Jan',  1, 1, 1, 1, 1, 1, 1],
+    ['Feb', 1, 1, 1, 1, 1, 1, 1],
+    ['Mar', 1, 1, 1, 1, 1, 1, 1],
+    ['Apr', 1, 1, 1, 1, 1, 1, 1],
+    ['May', 1, 1, 1, 1, 1, 1, 1],
+    ['Jun', 1, 1, 1, 1, 1, 1, 1],
+    ['Jul', 1, 1, 1, 1, 1, 1, 1],
+    ['Aug', 1, 1, 1, 1, 1, 1, 1],
+    ['Sep', 1, 1, 1, 1, 1, 1, 1],
+    ['Oct', 1, 1, 1, 1, 1, 1, 1],
+    ['Nov', 1, 1, 1, 1, 1, 1, 1],
+    ['Dec', 1, 1, 1, 1, 1, 1, 1]]);
+
+  var options = {
+    title: 'Spooling Coordination & Management',
+    hAxis: {title: '2019 Year', titleTextStyle: {color: 'red'}},
+	vAxis: {title: 'Hours', titleTextStyle: {color: 'red'} } };
+
+var chart = new google.visualization.ColumnChart(document.getElementById('charts'));
+  chart.draw(data, options);
+}
+</script>	
 </body>
 </head>
 </html>

@@ -23,6 +23,11 @@ background-color: #f0f0f0;
   height: 500px;
 }
 	
+	.chartt {
+  width: 100%;
+  height: 500px;
+}
+	
 </style>
 <body>
 <div class="chartd" id="chartd"></div>
@@ -56,7 +61,7 @@ var chart = new google.visualization.ColumnChart(document.getElementById('chartd
 }
 </script>
 
-	<div class="charts" id="charts"></div>
+<div class="charts" id="charts"></div>
 <script>
 google.load("visualization", "1", {packages:["corechart"]});
 google.setOnLoadCallback(drawChart1);
@@ -86,42 +91,35 @@ var chart = new google.visualization.ColumnChart(document.getElementById('charts
 }
 </script>	
 	
-	<div id="chart_div"></div>
-	<script>
-		google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawBasic);
+<div class="chartt" id="chartt"></div>
+<script>
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart1);
+function drawChart1() {
+  var data = google.visualization.arrayToDataTable([
+    ['Year', 'HOURS'],
+    ['BPI',  3],
+    ['Feb', 50],
+    ['Mar', 0],
+    ['Apr', 0],
+    ['May', 0],
+    ['Jun', 0],
+    ['Jul', 0],
+    ['Aug', 0],
+    ['Sep', 0],
+    ['Oct', 0],
+    ['Nov', 0],
+    ['Dec', 0]]);
 
-function drawBasic() {
+  var options = {
+    title: 'SpoolSheet Coordination & Management',
+    hAxis: {title: '2019 Year', titleTextStyle: {color: 'red'}},
+	vAxis: {title: 'Hours', titleTextStyle: {color: 'red'} } };
 
-      var data = google.visualization.arrayToDataTable([
-        ['PROJECT', '2018 - 2019 PFDS',],
-        ['UNISYS, AMG002', 500],
-        ['COLORCON, ANO021', 100],
-        ['BPI, EWTC05', 3000],
-        ['SAGE, EHAL01', 1000],
-        ['LIFE QUEST, APJ001', 2000],
-	['CRODA, LCR168', 2000], 
-	['COMET, EIMC03', 2000],
-	['SWARTHMORE, ESKN01', 2000],      
-      ]);
-
-      var options = {
-        title: 'TOTAL TIME',
-        chartArea: {width: '50%'},
-        hAxis: {
-          title: 'HOURS',
-          minValue: 0
-        },
-        vAxis: {
-          title: 'PROJECT'
-        }
-      };
-
-      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-
-      chart.draw(data, options);
-    }
-		</script>
+var chart = new google.visualization.ColumnChart(document.getElementById('chartt'));
+  chart.draw(data, options);
+}
+</script>	
 	
 </body>
 </head>

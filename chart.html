@@ -84,6 +84,41 @@ var chart = new google.visualization.ColumnChart(document.getElementById('charts
   chart.draw(data, options);
 }
 </script>	
+	
+	<div id="chart_div"></div>
+	<script>
+		google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['PROJECT', '2018 - 2019 TIME',],
+        ['UNISYS, AMG002', 500],
+        ['COLORCON, ANO021', 100],
+        ['BPI, EWTC05', 3000],
+        ['SAGE, EHAL01', 1000],
+        ['LIFE QUEST, APJ001', 2000]
+      ]);
+
+      var options = {
+        title: 'TOTAL TIME',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'HOURS',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'PROJECT'
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+		</script>
+	
 </body>
 </head>
 </html>

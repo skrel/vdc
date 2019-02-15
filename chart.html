@@ -180,7 +180,37 @@ function drawChart1() {
 var chart = new google.visualization.ColumnChart(document.getElementById('chartt'));
   chart.draw(data, options);
 }
-</script>	
+</script>
+	
+	
+	<div class="chartt" id="chartt"></div>
+<script>
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart1);
+function drawChart1() {
+  var data = google.visualization.arrayToDataTable([
+    ['Year', 'HOURS'],
+    ['BPI',  139.5],
+    ['SWARTHMORE', 183],
+    ['SAGE', 1646.5],
+    ['LIFE QUEST', 0],
+    ['COMET', 222.5],
+    ['COLORCON', 0],
+    ['CRODA', 0],
+    ['UNISYS', 25.5],
+]);
+
+  var options = {
+    title: 'Production Time',
+    hAxis: {title: '2018 - 2019 Years', titleTextStyle: {color: 'red'}},
+	vAxis: {title: 'Hours', titleTextStyle: {color: 'red'} } };
+
+var chart = new google.visualization.ColumnChart(document.getElementById('chartt'));
+  chart.draw(data, options);
+}
+</script>
+	
+	
 	
 </body>
 
